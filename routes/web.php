@@ -21,3 +21,8 @@ Route::get('/', function(){
 Route::resource('bookings', 'BookingController')->only([
     'index','create','store','show','update','destroy'
 ])->middleware('auth:client,cleaner');
+
+//
+//
+//
+//

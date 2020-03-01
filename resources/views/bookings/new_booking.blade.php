@@ -15,15 +15,17 @@
     </div>
 
     <form name="form_1" id="form_1" method="POST" action="{{route('bookings.store')}}">
-    @csrf
+        @csrf
     
     <div style="margin:auto;text-align:center;">
 
     @foreach($vehicules as $vehicule)
 
     <div class="card" style="width:30rem;margin:auto;display:inline-block;">
-        <img class="card-img-top" src="{{$vehicule->url}}" alt="Card image cap" style="max-width:298px;max-height:142px;">
-        <div class="card-body">
+        <div style="height:150px;width:auto;">
+            <img class="card-img-top" src="{{$vehicule->url}}" alt="Card image cap" style="max-width:298px;height:auto;">
+        </div>
+        <div class="card-body" style="display=inline-block;margin-top:10px;">
         <hr>
             <h5 class="card-title">{{$vehicule->name}} - {{$vehicule->id}}</h5>
             <p class="card-text">{{$vehicule->notes}}</p>
