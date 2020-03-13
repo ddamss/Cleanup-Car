@@ -100,7 +100,7 @@
                <div class="form-group">
                   <label class="control-label">Appointment Time</label>
                   <div class='input-group date' id='datetimepicker2'>
-                     <input type='text' class="form-control" name="booking_date">
+                     <input type='text' class="form-control" name="booking_date" required>
                      <span class="input-group-addon">
                      <span class="glyphicon glyphicon-calendar"></span>
                      </span>
