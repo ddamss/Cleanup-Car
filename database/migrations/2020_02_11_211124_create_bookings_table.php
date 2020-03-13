@@ -21,7 +21,7 @@ class CreateBookingsTable extends Migration {
 			$table->foreign('vehicule_id')->references('id')->on('vehicules')
 				->onDelete('restrict')
 				->onUpdate('restrict');
-			$table->datetime('clean_datetime');
+//			$table->datetime('clean_datetime');
 			$table->string('location');
 			$table->decimal('bill_amount', 65);
 			$table->timestamps();
