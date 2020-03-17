@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'welcome@cleanupcar.com'),
-        'name' => env('MAIL_FROM_NAME', '${APP_NAME}'),
+        'name' => env('MAIL_FROM_NAME', config('app.name')),
     ],
 
     /*
