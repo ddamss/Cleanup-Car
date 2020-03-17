@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\WelcomeUser;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +24,12 @@ Route::resource('bookings', 'BookingController')->only([
     'index','create','store','show','update','destroy'
 ])->middleware('auth:client,cleaner');
 
-//
-//
-//
-//
+
+Route::get('/mail', function () {
+    // send an email to "batman@batcave.io"
+    Mail::to('adam.abdelmoumni@gmail.com')->send(new WelcomeUser);
+
+    return "mail sent !";
+});
+
+

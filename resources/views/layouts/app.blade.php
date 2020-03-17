@@ -199,7 +199,7 @@ body {
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <div style="margin-left:250px;text-align: center;font-size: 50px;">
-                            {{config('app.name')}} v1.0
+                            {{config('app.name')}}
                         </div>
                     </ul>
 
