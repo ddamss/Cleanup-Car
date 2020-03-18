@@ -97,6 +97,7 @@ class RegisterController extends Controller
 
             // Mail::to($data['email'])->send(new WelcomeUser);
             Mail::to('adam.abdelmoumni@gmail.com')->send(new WelcomeUser);
+            dd($data['email']);
             
         }else{
             return \App\Cleaner::create([
@@ -105,8 +106,6 @@ class RegisterController extends Controller
                 'password' => Hash::make($data['password']),
             ]);
         }
-
-        
 
     }
 }
