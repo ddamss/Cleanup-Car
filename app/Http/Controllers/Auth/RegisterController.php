@@ -94,6 +94,9 @@ class RegisterController extends Controller
                 'email' =>$data['email'],
                 'password' => Hash::make($data['password']),
             ]);
+
+            Mail::to($data['email'])->send(new WelcomeUser);
+            
         }else{
             return \App\Cleaner::create([
                 'name' => $data['name'],
@@ -102,7 +105,7 @@ class RegisterController extends Controller
             ]);
         }
 
-        Mail::to($data['email'])->send(new WelcomeUser);
+        
 
     }
 }

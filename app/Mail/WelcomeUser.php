@@ -28,18 +28,14 @@ class WelcomeUser extends Mailable
      */
     public function build()
     {
-        // return $this->view('mail.welcome');
 
-        // $address = 'ignore@batcave.io';
-        // $name = 'Ignore Me';
         $subject = 'Welcome new user !';
     
-        return $this->view('mail.welcome')
-                    ->from('test@cleanupcar.com', 'Cleancup Car')
+        return $this->from('test@cleanupcar.com', 'Cleancup Car')
+                    ->markdown('mail.welcome')
                     // // ->cc($address, $name)
                     // // ->bcc($address, $name)
                     // ->replyTo($address, $name)
                     ->subject($subject);
-
     }
 }
