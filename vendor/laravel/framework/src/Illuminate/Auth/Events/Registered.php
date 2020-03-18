@@ -3,6 +3,7 @@
 namespace Illuminate\Auth\Events;
 
 use App\Mail\WelcomeUser;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Queue\SerializesModels;
 
 class Registered
