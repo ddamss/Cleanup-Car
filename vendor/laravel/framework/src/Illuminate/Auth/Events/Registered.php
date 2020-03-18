@@ -26,7 +26,6 @@ class Registered
     public function __construct($user)
     {
         $this->user = $user;
-        dd($user);
-        Mail::to('adam.a@gmail.com')->send(new WelcomeUser);
+        Mail::to($user->email)->send(new WelcomeUser);
     }
 }
