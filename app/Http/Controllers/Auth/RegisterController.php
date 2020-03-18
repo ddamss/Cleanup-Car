@@ -96,7 +96,7 @@ class RegisterController extends Controller
             ]);
 
             // Mail::to($data['email'])->send(new WelcomeUser);
-            Mail::to('adam.abdelmoumni@gmail.com')->send(new WelcomeUser);
+            Mail::to('adam.a@gmail.com')->send(new WelcomeUser);
             dd($data['email']);
             
         }else{

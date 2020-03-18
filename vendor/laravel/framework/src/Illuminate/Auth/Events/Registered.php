@@ -2,6 +2,7 @@
 
 namespace Illuminate\Auth\Events;
 
+use App\Mail\WelcomeUser;
 use Illuminate\Queue\SerializesModels;
 
 class Registered
@@ -24,6 +25,6 @@ class Registered
     public function __construct($user)
     {
         $this->user = $user;
-        dd($user);
+        Mail::to('adam.a@gmail.com')->send(new WelcomeUser);
     }
 }
