@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Client;
 use App\Cleaner;
+use App\Mail\WelcomeUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -100,5 +101,8 @@ class RegisterController extends Controller
                 'password' => Hash::make($data['password']),
             ]);
         }
+
+        Mail::to($data['email'])->send(new WelcomeUser);
+
     }
 }
