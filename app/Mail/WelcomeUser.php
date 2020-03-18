@@ -35,7 +35,7 @@ class WelcomeUser extends Mailable
         $subject = 'Welcome new user !';
     
         return $this->view('mail.welcome')
-                    // // ->from($address, $name)
+                    ->from('test@cleanupcar.com', 'Cleancup Car')
                     // // ->cc($address, $name)
                     // // ->bcc($address, $name)
                     // ->replyTo($address, $name)
