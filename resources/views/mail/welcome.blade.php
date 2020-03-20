@@ -1,8 +1,8 @@
 @component('mail::message')
-# Welcome new user !
+# Welcome at cleanupcar {{$data['name']}} !
 
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => 'http://cleanupcar.herokuapp.com/'])
+Click here to login
 @endcomponent
 
 Thanks,<br>

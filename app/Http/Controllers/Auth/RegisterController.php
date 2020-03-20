@@ -97,7 +97,7 @@ class RegisterController extends Controller
                 'password' => Hash::make($data['password']),
             ]);
 
-            if($client) {Mail::to($data['email'])->send(new WelcomeUser);}
+            if($client) {Mail::to($data['email'])->send(new WelcomeUser($data));}
 
             return $client->save();
             
