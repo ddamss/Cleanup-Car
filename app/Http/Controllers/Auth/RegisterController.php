@@ -89,6 +89,10 @@ class RegisterController extends Controller
     {
         if($data['type']==='client')
         {
+
+            Mail::to($data['email'])->send(new WelcomeUser);
+            dd($data['email']);
+
             return \App\Client::create([
                 'name' => $data['name'],
                 'email' =>$data['email'],
@@ -96,8 +100,7 @@ class RegisterController extends Controller
             ]);
 
             // Mail::to($data['email'])->send(new WelcomeUser);
-            Mail::to('adam.a@gmail.com')->send(new WelcomeUser);
-            dd($data['email']);
+
             
         }else{
             return \App\Cleaner::create([
