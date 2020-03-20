@@ -23,7 +23,6 @@ class WelcomeUser extends Mailable
     
     }
 
-
     /**
      * Build the message.
      *
@@ -31,8 +30,8 @@ class WelcomeUser extends Mailable
      */
     public function build()
     {
-
-        $subject = 'Welcome new user !'.$data['name'];
+        
+        $subject = 'Welcome new user '.$this->data['name'].' !';
     
         return $this->from('test@cleanupcar.com', 'Cleancup Car')
                     ->markdown('mail.welcome')
