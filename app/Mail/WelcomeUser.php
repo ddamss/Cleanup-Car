@@ -20,7 +20,9 @@ class WelcomeUser extends Mailable
     public function __construct($data)
     {
         $this->data = $data;
+    
     }
+
 
     /**
      * Build the message.

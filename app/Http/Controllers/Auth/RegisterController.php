@@ -102,11 +102,15 @@ class RegisterController extends Controller
             return $client->save();
             
         }else{
-            return \App\Cleaner::create([
+            $cleaner=new \App\Cleaner([
                 'name' => $data['name'],
                 'email' =>$data['email'],
                 'password' => Hash::make($data['password']),
             ]);
+
+            if($cleaner) {Mail::to($data['email'])->send(new WelcomeUser($data));}
+
+            return $cleaner->save();
         }
 
     }
