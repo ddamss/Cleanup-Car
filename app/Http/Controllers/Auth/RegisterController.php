@@ -102,7 +102,6 @@ class RegisterController extends Controller
             return $client->save();
             
         }else{
-            dd($data['email']);
             $cleaner=new \App\Cleaner([
                 'name' => $data['name'],
                 'email' =>$data['email'],
