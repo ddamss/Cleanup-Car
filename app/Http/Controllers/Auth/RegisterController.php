@@ -91,15 +91,19 @@ class RegisterController extends Controller
         if($data['type']==='client')
         {
 
-            Mail::to($data['email'])->send(new WelcomeUser);
-            // dd($data['email']);
-
-            return \App\Client::create([
+            $client=new \App\Client([
                 'name' => $data['name'],
                 'email' =>$data['email'],
                 'password' => Hash::make($data['password']),
             ]);
-            // dd($data['email']);
+
+            if($client) {Mail::to($data['email'])->send(new WelcomeUser);}
+
+            return \App\Client::save([
+                'name' => $data['name'],
+                'email' =>$data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
             
         }else{
             return \App\Cleaner::create([
