@@ -28,6 +28,6 @@ class BookingStatus extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.bookings');
+        return $this->markdown('mail.bookings');
     }
 }
