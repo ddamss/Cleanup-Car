@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Mail\BookingStatus;
 use Illuminate\Http\Request;
 use MercurySeries\Flashy\Flashy;
 use Illuminate\Support\Facades\DB;
@@ -52,7 +53,7 @@ class BookingController extends Controller
 
         $subject = 'New booking here !';
     
-        Mail::to($client->email)->send(new WelcomeUser); 
+        Mail::to($client->email)->send(new BookingStatus); 
 
         return view('bookings.new_booking',compact('vehicules','cleaners'));
     }
