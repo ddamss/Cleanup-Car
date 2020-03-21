@@ -49,6 +49,10 @@ class BookingController extends Controller
         $vehicules=$client->vehicules()->get();
         $cleaners=\App\Cleaner::all();
 
+        $subject = 'New booking here !';
+    
+        Mail::to($client->email)->send(new WelcomeUser); 
+
         return view('bookings.new_booking',compact('vehicules','cleaners'));
     }
 
