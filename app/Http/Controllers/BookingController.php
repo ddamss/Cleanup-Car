@@ -114,7 +114,7 @@ class BookingController extends Controller
 
         $client=DB::table('bookings')
         ->join('clients','clients.id','=','bookings.client_id')
-        ->where('bookings.client_id','=',\App\Booking::whereClient_id($booking->client_id)->client_id)
+        ->where('bookings.client_id','=',52)
         ->select('clients.email')
         ->first();
         
