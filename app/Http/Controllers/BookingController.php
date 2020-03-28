@@ -78,11 +78,11 @@ class BookingController extends Controller
         
         return redirect()->route('bookings.index');
         
-        if (redirect()->route('bookings.index')){
-            $subject = 'New booking here !';
-            Mail::to($client->email)->send(new BookingStatus); 
-            return view('bookings.new_booking',compact('vehicules','cleaners'));
-        }
+        // if (redirect()->route('bookings.index')){
+        //     $subject = 'New booking here !';
+        //     Mail::to($client->email)->send(new BookingStatus); 
+        //     return view('bookings.new_booking',compact('vehicules','cleaners'));
+        // }
         
     }
 
