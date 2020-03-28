@@ -118,7 +118,7 @@ class BookingController extends Controller
         ->select('bookings.*','clients.*')
         ->get();
 
-        dd(compact($client));
+        dd(compact('client'));
 
         if($request->input('booking_status')=='confirmed')
         {
