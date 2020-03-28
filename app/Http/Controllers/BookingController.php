@@ -123,13 +123,13 @@ class BookingController extends Controller
         if($request->input('booking_status')=='confirmed')
         {
             Flashy::message('booking number {'.$booking->id.'} confirmed !');
-            $subject = 'Booking confirmed !';
-            Mail::to($client->email)->send(new BookingStatus); 
+            // $subject = 'Booking confirmed !';
+            // Mail::to($client->email)->send(new BookingStatus); 
 
         }else{
             Flashy::error('booking number {'.$booking->id.'} cancelled !');
-            $subject = 'Booking cancelled !';
-            Mail::to($client->email)->send(new BookingStatus); 
+            // $subject = 'Booking cancelled !';
+            // Mail::to($client->email)->send(new BookingStatus); 
         }
 
         return redirect()->route('bookings.index');       
