@@ -35,7 +35,7 @@ class BookingController extends Controller
             ->select('bookings.*','cleaners.name as cleanerName','clients.name as clientName','vehicules.name as vehiculeName','vehicules.notes as vehiculeNotes','vehicules.url')
             ->orderBy('id', 'asc')
             ->get();
-    
+            dd(compact('bookings'));
             return view('bookings.show_bookings',compact('bookings'));
     }
 
