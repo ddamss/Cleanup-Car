@@ -118,6 +118,8 @@ class BookingController extends Controller
         ->select('bookings.*','clients.*')
         ->get();
 
+        dd(compact($client));
+
         if($request->input('booking_status')=='confirmed')
         {
             Flashy::message('booking number {'.$booking->id.'} confirmed !');
