@@ -33,11 +33,7 @@ class WelcomeUser extends Mailable
         
         $subject = 'Welcome new user '.$this->data['name'].' !';
     
-        return $this->from('test@cleanupcar.com', 'Cleancup Car')
-                    ->markdown('mail.welcome')
-                    // // ->cc($address, $name)
-                    // // ->bcc($address, $name)
-                    // ->replyTo($address, $name)
+        return $this->markdown('mail.welcome')
                     ->subject($subject);
     }
 }

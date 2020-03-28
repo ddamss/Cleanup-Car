@@ -16,9 +16,12 @@ class BookingStatus extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $subject;
+
+    public function __construct($subject)
     {
-        //
+        $this->subject=$subject;
     }
 
     /**
@@ -28,6 +31,7 @@ class BookingStatus extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.bookings');
+        return $this->markdown('mail.bookings')
+                    ->subject($subject);
     }
 }
