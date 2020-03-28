@@ -77,6 +77,10 @@ class BookingController extends Controller
             'booking_status'=>$booking_status,
         ]);
         Flashy::message('booking number {'.$booking->id.'} logged !');
+        if($booking){
+            $subject = 'New booking here !';
+            Mail::to($client->email)->send(new BookingStatus); 
+        }
         return redirect()->route('bookings.index');
     }
 
