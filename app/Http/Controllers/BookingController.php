@@ -114,12 +114,11 @@ class BookingController extends Controller
 
         $client=DB::table('bookings')
         ->join('clients','clients.id','=','bookings.client_id')
-        ->where('bookings.client_id','=',52)
+        ->where('bookings.client_id','=',\App\Booking::whereClient_id($booking->client_id))
         ->select('bookings.*','clients.*')
-        ->get();
+        ->first();
         
         dd($client);
-        dd(compact('client'));
 
         if($request->input('booking_status')=='confirmed')
         {
