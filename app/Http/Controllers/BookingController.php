@@ -118,7 +118,7 @@ class BookingController extends Controller
         ->select('clients.email')
         ->first();
         
-        dd(client);
+        dd(compact('client'));
 
         if($request->input('booking_status')=='confirmed')
         {
