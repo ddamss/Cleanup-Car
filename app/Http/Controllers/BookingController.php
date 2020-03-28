@@ -62,6 +62,9 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+        $auth=Auth::user()->id;
+        $client=\App\Client::whereId($auth)->first();
+        
         $vehicule_id=\App\Vehicule::whereName($request->input('vehiculeName'))->get('id');
         $cleaner_id=\App\Cleaner::whereName($request->input('cleanerName'))->get('id');
         $booking_status='pending';
