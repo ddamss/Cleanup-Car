@@ -117,7 +117,8 @@ class BookingController extends Controller
         ->where('bookings.client_id','=',\App\Booking::whereClient_id($booking->client_id))
         ->select('bookings.*','clients.*')
         ->get();
-
+        
+        dd($client);
         dd(compact('client'));
 
         if($request->input('booking_status')=='confirmed')
