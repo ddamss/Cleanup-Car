@@ -57,7 +57,7 @@
                     
                         <div class="form-check-inline">
                             <input type="hidden" name="cleaner_id" value="{{$cleaner->id}}">
-                            <input type="checkbox" name="cleanerName[]" value="{{$cleaner->name}}" class="form-check-input filled-in" id="filledInCheckbox" required>
+                            <input type="checkbox" name="cleanerName[]" value="{{$cleaner->name}}" class="form-check-input filled-in" id="filledInCheckbox">
                             <label class="form-check-label" for="filledInCheckbox">Get it</label>
                         </div>
 
