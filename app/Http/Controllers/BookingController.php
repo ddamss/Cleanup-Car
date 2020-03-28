@@ -50,6 +50,8 @@ class BookingController extends Controller
         $client=\App\Client::whereId($auth)->first();
         $vehicules=$client->vehicules()->get();
         $cleaners=\App\Cleaner::all();
+
+        return view('bookings.new_booking',compact('vehicules','cleaners'));
     }
 
     /**
@@ -75,7 +77,6 @@ class BookingController extends Controller
             'booking_status'=>$booking_status,
         ]);
         Flashy::message('booking number {'.$booking->id.'} logged !');
-        
         return redirect()->route('bookings.index');
     }
 
