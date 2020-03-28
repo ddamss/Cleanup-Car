@@ -64,12 +64,12 @@ class BookingController extends Controller
     {
         $auth=Auth::user()->id;
         $client=\App\Client::whereId($auth)->first();
-        
+        $cleaner=\App\Cleaner::whereName($request->input('cleanerName'))->first();
+
         $vehicule_id=\App\Vehicule::whereName($request->input('vehiculeName'))->get('id');
-        $cleaner_id=\App\Cleaner::whereName($request->input('cleanerName'))->get('id');
+        $cleaner_id=$cleaner->get('id');
         $booking_status='pending';
-        // dd($booking_status);
-        // dd($request->input('booking_status'));
+
         $booking=\App\Booking::create([
             'cleaner_id'=>$cleaner_id[0]['id'],
             'client_id'=>$request->input('client_id'),
@@ -83,6 +83,7 @@ class BookingController extends Controller
         if($booking){
             $subject = 'New booking here !';
             Mail::to($client->email)->send(new BookingStatus); 
+            Mail::to($cleaner->email)->send(new BookingStatus); 
         }
         return redirect()->route('bookings.index');
     }
