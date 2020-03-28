@@ -111,12 +111,11 @@ class BookingController extends Controller
         \App\Booking::whereId($booking->id)->update([
             'booking_status'=>$request->input('booking_status')
         ]);
-
-        dd(\App\Booking::whereClient_id($booking->client_id)->first()->client_id);
+        $client_id=\App\Booking::whereClient_id($booking->client_id)->first()->client_id;
 
         $client=DB::table('bookings')
         ->join('clients','clients.id','=','bookings.client_id')
-        ->where('bookings.client_id','=',52)
+        ->where('bookings.client_id','=',$client_id)
         ->select('clients.email')
         ->first();
         
