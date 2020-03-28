@@ -124,7 +124,6 @@ class BookingController extends Controller
             $subject = 'Booking number ['.$booking->id.'] confirmed !';
             Flashy::message($subject);
             Mail::to($client->email)->send(new BookingStatus($subject)); 
-
         }else{
             $subject = 'Booking number ['.$booking->id.'] cancelled !';
             Flashy::error($subject);
