@@ -112,7 +112,7 @@ class BookingController extends Controller
             'booking_status'=>$request->input('booking_status')
         ]);
 
-        dd(\App\Booking::whereClient_id($booking->client_id));
+        dd(\App\Booking::whereClient_id($booking->client_id)->first());
 
         $client=DB::table('bookings')
         ->join('clients','clients.id','=','bookings.client_id')
